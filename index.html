@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-up form</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-</head>
-<body>
-    
-</body>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <img
+          src="landscape-7567.gif"
+          alt="GIF of a tree on an island"
+          style="height: 100vh; width: 900px"
+        />
+      </div>
+      <div class="right-section">
+        <div class="upper-right-section">
+          <div>
+            <p>
+              This is not a real online service! You know you need something
+              like this in your life to help you realize your deepest dreams.
+            </p>
+            <p>Sign up now to get started.</p>
+          </div>
+          <div class="psychological-text">
+            <p>You know you want to.</p>
+          </div>
+        </div>
+        <form>
+          <h3>Let's do this!</h3>
+          <div class="form-elements">
+            <div class="left-form-elements">
+              <p>
+                <label for="firstname"> First name: </label>
+                <input type="text" id="firstname" name="firstname" required />
+              </p>
+              <p>
+                <label for="mail"> Email: </label>
+                <input type="email" id="mail" name="usermail" required />
+              </p>
+              <p>
+                <label for="pwd"> Password: </label>
+                <input type="password" id="pwd" name="userPassword" required />
+              </p>
+            </div>
+            <div class="right-form-elements">
+              <p>
+                <label for="lastName"> Last name: </label>
+                <input type="text" id="lastName" name="lastname" required />
+              </p>
+              <p>
+                <label for="phoneNum"> Phone: </label>
+                <input type="tel" id="phoneNum" name="phoneNum" required />
+              </p>
+              <p>
+                <label for="confirm-pwd">Confirm Password: </label>
+                <input
+                  type="password"
+                  id="confirm-pwd"
+                  name="confirm-Password"
+                  required
+                />
+              </p>
+            </div>
+          </div>
+        </form>
+        <div class="lower-right-section">
+          <p>
+            <button type="submit">Create Account</button>
+          </p>
+          <div class="have-an-account">
+            <p>Already have an account? <a>Log In</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
