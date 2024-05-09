@@ -5,11 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-up form</title>
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const passwordInput = document.getElementById("pwd");
+        const confirmPasswordInput = document.getElementById("confirm-pwd");
+        const submitButton = document.getElementById("submit-button");
+        const passwordError = document.getElementById("password-error");
+        const form = document.querySelector("form");
+
+        submitButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          const password = passwordInput.value;
+          const confirmPassword = confirmPasswordInput.value;
+
+          if (password !== confirmPassword) {
+            passwordError.textContent = "*Passwords do not match";
+          } else {
+            alert("Form was submitted to a black hole!");
+            passwordError.textContent="‎"; //invisible character
+            form.submit(); // Submit the form if passwords match
+          }
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="container">
       <div class="left-section">
+        <a href="https://www.theodinproject.com/"
+          ><img class="odin-logo" src="odin-lined.png" alt="Odin Project logo"
+        /></a>
         <img
+          class="background-tree"
           src="landscape-7567.gif"
           alt="GIF of a tree on an island"
           style="height: 100vh; width: 900px"
@@ -34,7 +61,13 @@
             <div class="left-form-elements">
               <p>
                 <label for="firstname"> First name: </label>
-                <input type="text" id="firstname" name="firstname" required />
+                <input
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  minlength="2"
+                  required
+                />
               </p>
               <p>
                 <label for="mail"> Email: </label>
@@ -44,11 +77,12 @@
                 <label for="pwd"> Password: </label>
                 <input type="password" id="pwd" name="userPassword" required />
               </p>
+              <p id="password-error" class="error-message">‎</p>
             </div>
             <div class="right-form-elements">
               <p>
                 <label for="lastName"> Last name: </label>
-                <input type="text" id="lastName" name="lastname" required />
+                <input type="text" id="lastName" name="lastname" />
               </p>
               <p>
                 <label for="phoneNum"> Phone: </label>
@@ -63,17 +97,18 @@
                   required
                 />
               </p>
+              <p>‎</p>
+            </div>
+          </div>
+          <div class="lower-right-section">
+            <p>
+              <button id="submit-button" type="submit">Create Account</button>
+            </p>
+            <div class="have-an-account">
+              <p>Already have an account? <a>Log In</a></p>
             </div>
           </div>
         </form>
-        <div class="lower-right-section">
-          <p>
-            <button type="submit">Create Account</button>
-          </p>
-          <div class="have-an-account">
-            <p>Already have an account? <a>Log In</a></p>
-          </div>
-        </div>
       </div>
     </div>
   </body>
